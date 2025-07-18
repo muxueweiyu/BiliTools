@@ -1,0 +1,10 @@
+{
+  "name": "update-deps",
+  "scripts": {
+    "check-updates": "pnpm outdated",
+    "update-patch": "pnpm update",
+    "update-minor": "pnpm update --latest",
+    "security-check": "pnpm audit",
+    "security-fix": "pnpm audit --fix"
+  }
+}

@@ -13,12 +13,26 @@
   "license": "GPL-3.0-or-later",
   "author": "btjawa",
   "type": "module",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
     "build": "vue-tsc --noEmit && vite build",
     "dev": "vite",
     "preview": "vite preview",
     "tauri": "tauri",
-    "updater": "node scripts/updater.mjs"
+    "updater": "node scripts/updater.mjs",
+    "update-check": "pnpm outdated",
+    "update-security": "pnpm audit --fix",
+    "update-patch": "pnpm update",
+    "update-minor": "pnpm update --latest",
+    "update-snapshot": "node -e \"const fs=require('fs'); const t=new Date().toISOString().replace(/[:.]/g,'-'); fs.copyFileSync('package.json',`package.json.backup_${t}`); fs.copyFileSync('pnpm-lock.yaml',`pnpm-lock.yaml.backup_${t}`); console.log('快照已保存')\"",
+    "update-manager": ".\\scripts\\update-manager.bat",
+    "commit": ".\\scripts\\commit-helper.bat",
+    "commit-deps": ".\\scripts\\commit-helper.bat && echo deps",
+    "commit-config": "git config commit.template .gitmessage"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.5.0",

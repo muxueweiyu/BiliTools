@@ -1,0 +1,6 @@
+# pnpm workspace 配置
+packages:
+  # 当前项目根目录
+  - '.'
+  # 如果将来有子包，可以添加：
+  # - 'packages/*'

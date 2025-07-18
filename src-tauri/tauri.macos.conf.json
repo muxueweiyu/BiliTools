@@ -4,8 +4,8 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "minWidth": 1150,
-        "minHeight": 800,
+        "minWidth": 900,
+        "minHeight": 600,
         "title": "BiliTools",
         "label": "main",
         "width": 1150,
